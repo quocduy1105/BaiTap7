@@ -1,0 +1,46 @@
+Câu 1: CI khác CD chỗ nào?
+
+CI (Continuous Integration - Tích hợp liên tục): Giai đoạn tập trung vào code. Mỗi khi lập trình viên đẩy (push) code lên, hệ thống sẽ tự động gộp code, build và chạy các bài test (Unit test, linting,...). Mục đích là để phát hiện lỗi ngay lập tức, đảm bảo code mới không làm hỏng hệ thống hiện tại.
+
+CD (Continuous Delivery/Deployment - Phân phối/Triển khai liên tục): Là bước tiếp nối của CI, tập trung vào sản phẩm. Nó lấy kết quả đã vượt qua bước CI một cách an toàn để tự động triển khai (deploy) lên các môi trường (như Staging, UAT, hoặc Production) để người dùng có thể sử dụng.
+
+Câu 2: Runner là gì? Ai cung cấp runner?
+
+Runner là gì? Nó giống như những "người công nhân" thực thi công việc. Về mặt kỹ thuật, Runner là một môi trường (server, máy ảo, hoặc Docker container) chạy các kịch bản (jobs) mà bạn đã định nghĩa trong pipeline.
+
+Ai cung cấp? * Shared Runners: Do các nền tảng mã nguồn cung cấp sẵn (ví dụ: GitLab.com, GitHub Actions). Chúng miễn phí (có giới hạn số phút) và bạn không cần phải tốn công cài đặt.
+
+Self-hosted/Specific Runners: Do chính bạn hoặc công ty tự cài đặt trên server riêng (AWS, máy chủ vật lý,...). Loại này giúp tăng hiệu suất, bảo mật hơn và đáp ứng được các dự án yêu cầu cấu hình đặc biệt.
+
+Câu 3: Artifacts dùng để làm gì?
+
+Artifacts là các tệp tin hoặc thư mục được sinh ra (output) sau khi một job hoàn thành.
+
+Tác dụng chính:
+
+Chia sẻ dữ liệu giữa các job: Ví dụ job Build tạo ra một file .exe hoặc thư mục dist/. Bạn khai báo nó làm Artifacts để job Deploy phía sau có thể lấy file/thư mục đó đem đi triển khai. Nếu không có Artifacts, mỗi job chạy trong một môi trường độc lập và dữ liệu sẽ bị xóa ngay khi job kết thúc.
+
+Lưu trữ & Tải xuống: Giúp bạn có thể tải các file kết quả (như báo cáo test, file cài đặt) trực tiếp từ giao diện GitLab/GitHub.
+
+Câu 4: Pipeline fail ở stage test, stage deploy có chạy không?
+
+Mặc định là KHÔNG.
+
+Lý do: Các stage (giai đoạn) trong pipeline chạy theo thứ tự tuần tự. Cơ chế này được thiết kế theo nguyên tắc "Fail-fast" (Lỗi là dừng ngay). Nếu stage Test thất bại, có nghĩa là code đang có lỗi. Pipeline sẽ lập tức dừng lại để bảo vệ môi trường thực tế, không cho phép đưa bản code lỗi đó qua stage Deploy.
+
+(Lưu ý nhỏ: Trừ khi bạn cố tình cấu hình job test đó bỏ qua lỗi bằng lệnh allow_failure: true thì pipeline mới tiếp tục).
+
+Câu 5: Làm sao để pipeline chỉ chạy trên branch main?
+
+rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+
+Câu 6: Muốn chạy pipeline trên mọi branch?
+
+Mặc định: Nếu bạn không khai báo điều kiện rules hay only nào, pipeline sẽ tự động chạy cho tất cả các branch mỗi khi có commit mới.
+
+Nếu phải dùng rules: Để đảm bảo job chạy trên mọi branch (nhưng không chạy cho các sự kiện khác như gắn tag), bạn chỉ cần kiểm tra xem biến branch có tồn tại hay không:
+
+rules:
+  - if: $CI_COMMIT_BRANCH

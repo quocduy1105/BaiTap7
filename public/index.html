@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Studio | Creative Brand & Design</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo">Bloom<span>Studio</span></a>
+
+      <nav class="menu">
+        <a href="#home">Trang chủ</a>
+        <a href="#features">Dịch vụ</a>
+        <a href="#showcase">Quy trình</a>
+        <a href="#stats">Thành tựu</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <button class="nav-btn" onclick="scrollToSection('contact')">Tư vấn ngay</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Creative Agency • Branding • Social Media</p>
+          <h1>
+            Xây dựng hình ảnh thương hiệu hiện đại,
+            tinh tế và nổi bật trên nền tảng số
+          </h1>
+          <p class="hero-text">
+            Bloom Studio là đội ngũ sáng tạo chuyên thiết kế nhận diện thương hiệu,
+            nội dung truyền thông và giao diện số cho cá nhân, startup và doanh nghiệp.
+            Chúng tôi tập trung vào tính thẩm mỹ, trải nghiệm người dùng và hiệu quả truyền thông.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToSection('features')">
+              Xem dịch vụ
+            </button>
+            <button class="btn btn-outline" onclick="showWelcome()">
+              Tìm hiểu thêm
+            </button>
+          </div>
+
+          <div id="welcomeMessage" class="welcome-box"></div>
+        </div>
+
+        <div class="hero-card">
+          <div class="floating-card">
+            <p class="mini-title">Giải pháp nổi bật</p>
+            <h3>Thiết kế đồng bộ từ thương hiệu đến nội dung truyền thông</h3>
+            <ul>
+              <li>✅ Thiết kế logo và bộ nhận diện thương hiệu</li>
+              <li>✅ Landing page, portfolio và website giới thiệu</li>
+              <li>✅ Thiết kế social media post và campaign visual</li>
+              <li>✅ Tối ưu hình ảnh thương hiệu cho môi trường số</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands">
+      <div class="container brands-row">
+        <span>Brand Identity</span>
+        <span>Creative Design</span>
+        <span>Social Content</span>
+        <span>UI Landing Page</span>
+        <span>Visual Strategy</span>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Dịch vụ của chúng tôi</p>
+          <h2>Những giải pháp giúp thương hiệu của bạn chuyên nghiệp hơn mỗi ngày</h2>
+          <p>
+            Chúng tôi cung cấp các dịch vụ thiết kế và truyền thông phù hợp cho doanh nghiệp nhỏ,
+            thương hiệu cá nhân và các dự án cần hình ảnh chỉn chu, đồng nhất.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon">🎀</div>
+            <h3>Thiết kế nhận diện thương hiệu</h3>
+            <p>
+              Xây dựng logo, màu sắc, font chữ và hệ thống hình ảnh nhất quán,
+              giúp thương hiệu có dấu ấn riêng và dễ ghi nhớ hơn.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon">💎</div>
+            <h3>Thiết kế ấn phẩm truyền thông</h3>
+            <p>
+              Thiết kế bài đăng mạng xã hội, banner, poster và các ấn phẩm quảng bá
+              với phong cách hiện đại, bắt mắt và đúng định hướng thương hiệu.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon">🖥️</div>
+            <h3>Thiết kế landing page</h3>
+            <p>
+              Tạo landing page giới thiệu sản phẩm, dịch vụ hoặc portfolio
+              với bố cục rõ ràng, đẹp mắt và hỗ trợ trình bày nội dung hiệu quả.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon">📈</div>
+            <h3>Tư vấn định hướng hình ảnh</h3>
+            <p>
+              Phân tích phong cách thương hiệu, đề xuất hướng hình ảnh và cách trình bày nội dung
+              phù hợp với tệp khách hàng mục tiêu.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase" class="section soft-pink">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Quy trình làm việc</p>
+          <h2>Quy trình rõ ràng để mỗi dự án đều được triển khai mượt mà</h2>
+        </div>
+
+        <div class="showcase-grid">
+          <div class="showcase-card large">
+            <h3>1. Tiếp nhận & phân tích nhu cầu</h3>
+            <p>
+              Chúng tôi trao đổi với khách hàng để hiểu mục tiêu dự án, định vị thương hiệu,
+              tệp khách hàng mục tiêu và phong cách mong muốn.
+            </p>
+            <button class="btn btn-primary" onclick="showTime()">Xem thời gian hiện tại</button>
+            <div id="time" class="result-box">Sẵn sàng bắt đầu dự án của bạn.</div>
+          </div>
+
+          <div class="showcase-card">
+            <h3>2. Cá nhân hoá trải nghiệm</h3>
+            <p>Nhập tên để xem lời chào cá nhân hóa từ Bloom Studio.</p>
+            <input type="text" id="nameInput" placeholder="Nhập tên của bạn..." />
+            <button class="btn btn-dark" onclick="sayHello()">Gửi thông tin</button>
+            <div id="greeting" class="result-box">Chúng tôi luôn sẵn sàng hỗ trợ.</div>
+          </div>
+
+          <div class="showcase-card">
+            <h3>3. Theo dõi tiến độ</h3>
+            <p>
+              Dự án được cập nhật theo từng giai đoạn: lên ý tưởng, thiết kế, chỉnh sửa
+              và bàn giao hoàn thiện.
+            </p>
+            <div class="counter-number" id="counter">0</div>
+            <div class="counter-actions">
+              <button class="btn btn-primary" onclick="increase()">Tiến độ +</button>
+              <button class="btn btn-outline-dark" onclick="decrease()">Giảm</button>
+              <button class="btn btn-outline" onclick="resetCounter()">Đặt lại</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Con số nổi bật</p>
+          <h2>Những kết quả thể hiện sự đầu tư nghiêm túc vào chất lượng dịch vụ</h2>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>120+</h3>
+            <p>Dự án thiết kế đã thực hiện</p>
+          </div>
+          <div class="stat-card">
+            <h3>85+</h3>
+            <p>Khách hàng hài lòng</p>
+          </div>
+          <div class="stat-card">
+            <h3>4+</h3>
+            <p>Năm kinh nghiệm sáng tạo</p>
+          </div>
+          <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Hỗ trợ và phản hồi</p>
+          </div>
+        </div>
+
+        <div class="info-panel">
+          <div class="info-text">
+            <h3>📦 Thông tin dự án</h3>
+            <p>
+              Khu vực này có thể dùng để hiển thị dữ liệu build, thông tin deploy
+              hoặc metadata của website khi triển khai lên GitLab Pages.
+            </p>
+          </div>
+          <pre id="buildInfo" class="build-box">Đang tải dữ liệu...</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section">
+      <div class="container quote-box">
+        <p class="quote">
+          “Thiết kế tốt không chỉ đẹp về hình thức, mà còn giúp thương hiệu truyền tải đúng cảm xúc
+          và tạo được sự tin tưởng với khách hàng.”
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid">
+        <div class="contact-content">
+          <p class="section-tag">Liên hệ hợp tác</p>
+          <h2>Sẵn sàng đồng hành cùng bạn trong những dự án chỉn chu và khác biệt</h2>
+          <p>
+            Nếu bạn đang cần một website giới thiệu, landing page, bộ nhận diện thương hiệu
+            hoặc ấn phẩm truyền thông đẹp, rõ ràng và chuyên nghiệp, Bloom Studio sẽ là
+            đối tác phù hợp để bắt đầu.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Thông tin liên hệ</h3>
+          <p><strong>Email:</strong> hello@bloomstudio.vn</p>
+          <p><strong>Dịch vụ:</strong> Branding, Landing Page, Visual Design</p>
+          <p><strong>Thời gian làm việc:</strong> 08:00 - 18:00, Thứ 2 - Thứ 7</p>
+          <button class="btn btn-primary full" onclick="scrollToSection('home')">
+            Quay lại đầu trang
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© 2026 BloomStudio. All rights reserved.</p>
+      <p>Thiết kế với phong cách hiện đại và tông hồng tinh tế.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
